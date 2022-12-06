@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      .h02 {
+        display: none;
+      }
+      .h01:hover {
+        display: none;
+      }
+      .h01:hover + .h02 {
+        display: block;
+      }
+      nav {
+        background-color: black;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+      }
+      nav ul li {
+        /* background-color: aquamarine; */
+        padding: 10px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover {
+        color: orange;
+        border-bottom: 1px solid orangered;
+        padding-bottom: 3px;
+        transition: all 0.25s;
+      }
+      .div01 {
+        background-color: aquamarine;
+        height: 100px;
+        overflow: hidden;
+      }
+      .div02 {
+        background-color: brown;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div01">
+      hello
+      <div class="div02">css</div>
+    </div>
+    <hr />
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MEMBER</a></li>
+        <li><a href="#">BAOARD</a></li>
+      </ul>
+    </nav>
+
+    <hr />
+    <div class="h01">
+      <h1>none & block</h1>
+      <img src="resources/images/img.jpg" />
+    </div>
+
+    <div class="h02">
+      <h1>none & block</h1>
+      <img src="resources/images/car01.png" />
+    </div>
+  </body>
+</html>
