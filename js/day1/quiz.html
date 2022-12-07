@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>QUIZ</title>
+  </head>
+  <body>
+    <table align="center" border="1">
+      <tr>
+        <td>
+          <img id="img1" src="../resources/images/최근상품01.jpg" />
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <input type="button" value="이전" onclick="prePage()" />
+          <input type="button" value="다음" onclick="nextPage()" />
+        </th>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<script>
+  var chk = 1;
+
+  function imgChk(chk) {
+    img = document.getElementById("img1");
+    switch (chk) {
+      case 1:
+        img.src = "../resources/images/최근상품01.jpg";
+        break;
+      case 2:
+        img.src = "../resources/images/최근상품02.jpg";
+        break;
+      case 3:
+        img.src = "../resources/images/최근상품03.jpg";
+        break;
+      case 4:
+        img.src = "../resources/images/최근상품04.jpg";
+        break;
+      case 5:
+        img.src = "../resources/images/최근상품05.jpg";
+        break;
+      case 6:
+        img.src = "../resources/images/최근상품06.jpg";
+        break;
+      case 7:
+        img.src = "../resources/images/최근상품07.jpg";
+        break;
+      case 8:
+        img.src = "../resources/images/최근상품08.jpg";
+        break;
+    }
+  }
+
+  function prePage() {
+    chk -= 1;
+    if (chk <= 0) chk = 8;
+    imgChk(chk);
+  }
+
+  function nextPage() {
+    chk += 1;
+    if (chk > 8) chk = 1;
+    imgChk(chk);
+  }
+</script>
+
+<style>
+  img {
+    height: 350px;
+    width: 280px;
+  }
+</style>

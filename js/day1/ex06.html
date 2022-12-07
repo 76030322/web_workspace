@@ -1,0 +1,60 @@
+<style>
+  .ddd {
+    text-align: center;
+  }
+</style>
+
+<script>
+  function test() {
+    // alert("호출");
+    name1 = document.getElementById("name1");
+    console.log(name1);
+    console.log(name1.value);
+    // name1.value = "다른값으로 넣어주세요";
+    name2 = document.getElementById("name2");
+    console.log(name2);
+    console.log(name2.value);
+    if (name1.value == name2.value) {
+      alert("인증통과");
+    } else {
+      alert("불일치");
+      name1.value = "";
+      name2.value = "";
+      name1.focus();
+    }
+  }
+
+  function test2() {
+    div = document.getElementById("div");
+    div.innerHTML = "<b>반가워</b>";
+    div.style.color = "blue";
+    div.style.backgroundColor = "yellow";
+    div.className = "ddd";
+  }
+</script>
+
+<input type="text" id="name1" placeholder="입력" value="안녕하세요" /><br />
+<input type="text" id="name2" placeholder="입력" /><br />
+<input type="button" value="클릭" onclick="test()" /><br />
+<hr />
+<div id="div">안녕</div>
+<input type="button" value="클릭" onclick="test2()" /><br />
+
+<style>
+  img {
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
+<script>
+  var bool = true;
+  function test3() {
+    img = document.getElementById("img");
+    if (bool) img.src = "../resources/images/car01.png";
+    else img.src = "../resources/images/car02.png";
+    bool = !bool;
+  }
+</script>
+<hr />
+<img id="img" src="../resources/images/car02.png" onclick="test3()" />

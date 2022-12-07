@@ -1,0 +1,33 @@
+<script>
+  function test01() {
+    var num = 95;
+    let name = "홍길동";
+    return num, name; // ,로 여러개의 값을 return으로 넘길수 없다.
+  }
+  n = test01();
+  document.write("n : " + n);
+
+  document.write("<hr>");
+  function test02(msg, n1, n2) {
+    document.write("msg : " + msg + "<br>");
+    document.write("n1 : " + n1 + "<br>");
+    document.write("n2 : " + n2 + "<br>");
+    if (n2 == undefined) {
+      document.write("n2값이 없습니다.");
+    }
+  }
+  test02("안녕하세요!", 1000, 2000);
+  document.write("<hr>");
+
+  function test03() {
+    // console >> 웹페이지에서 f12의 콘솔창에 출력
+    console.log(arguments);
+    console.log(arguments.length);
+    let sum = 0;
+    for (i = 0; arguments.length > i; i++) {
+      sum += arguments[i];
+    }
+    return sum;
+  }
+  document.write("합 : " + test03(100, 200, 300, 400));
+</script>

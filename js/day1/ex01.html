@@ -1,0 +1,54 @@
+<html>
+  <head> </head>
+  <body>
+    <script>
+      /* 문단 주석 */
+      // 한줄 주석
+      //   num = 1;
+      //   obj = null;
+      //   document.write(num);
+      //   document.write("<hr>");
+      //   document.write("100 : " + typeof 100 + "<br>");
+      //   document.write("10.5 : " + typeof 10.5 + "<br>");
+      //   document.write("홍길동 : " + typeof "홍길동" + "<br>");
+      //   document.write("true : " + typeof true + "<br>");
+      //   document.write("false : " + typeof false + "<br>");
+      //   document.write("[1,2,3] : " + typeof [1, 2, 3] + "<br>");
+      //   document.write("{ } : " + typeof {} + "<br>");
+      //   document.write("num : " + typeof num + "<br>");
+      //   document.write("obj : " + typeof obj + "<br>");
+
+      var u_name = prompt("당신의 이름은? ");
+      var u_age = prompt(name + "님의 나이는? ");
+      var u_address = prompt(name + "님의 주소를 입력하세요");
+      document.write("이름: " + u_name + "<br>");
+      document.write("나이: " + u_age + "<br>");
+      document.write("주소: " + u_address + "<br>");
+    </script>
+
+    <table border="1">
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>주소</th>
+      </tr>
+      <tr>
+        <td align="center">
+          <script>
+            document.write(u_name);
+          </script>
+        </td>
+        <td align="center">
+          <script>
+            document.write(u_age);
+          </script>
+        </td>
+        <td align="center">
+          <script>
+            document.write(u_address);
+          </script>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
