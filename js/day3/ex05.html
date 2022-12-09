@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body onload="init()">
+    <input type="button" id="target1" value="target1" />
+    <input type="button" id="target2" value="targer2" />
+  </body>
+
+  <script>
+    function init() {
+      var t1 = document.getElementById("target1");
+      var t2 = document.getElementById("target2");
+      t1.addEventListener("click", test);
+      t2.addEventListener("click", test);
+    }
+
+    function test() {
+      console.log(event.target);
+
+      switch (event.target.id) {
+        case "target1":
+          alert("target1111");
+          break;
+
+        case "target2":
+          alert("target2222");
+          break;
+      }
+    }
+  </script>
+</html>

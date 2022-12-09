@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register.html</title>
+  </head>
+
+  <body>
+    <form id="fo" action="success.html" method="post">
+      <input type="text" id="u_id" name="u_id" placeholder="ID 입력" /><label style="color: red">(*필수항목)</label><br />
+      <input type="text" id="u_pwd" name="u_pwd" placeholder="비밀번호" /><label style="color: red">(*필수항목)</label><br />
+      <input type="text" id="u_pwdchk" name="u_pwdchk" placeholder="비밀번호 확인" onchange="pwdChk()" /><span id="sp_pwdchk"></span><br />
+      <input type="text" name="u_name" placeholder="이름" /><br />
+      <hr />
+      <input type="button" value="등록" onclick="checkFunc()" />
+    </form>
+  </body>
+
+  <script>
+    function checkFunc() {
+      var id = document.getElementById("u_id");
+      var pwd = document.getElementById("u_pwd");
+      var pwdchk = document.getElementById("u_pwdchk");
+
+      if (id.value == "") {
+        alert("아이디는 필수 사항입니다.");
+        id.focus();
+      } else if (pwd.value == "") {
+        alert("비밀번호는 필수 사항입니다.");
+        pwd.focus();
+      } else if (pwdchk.value == "") {
+        alert("비밀번호 확인은 필수 사항입니다.");
+        pwdchk.focus();
+      } else {
+        fo.submit();
+        alert("가입을 축하합니다");
+      }
+    }
+
+    function pwdChk() {
+      var pwd = document.getElementById("u_pwd");
+      var pwdchk = document.getElementById("u_pwdchk");
+
+      if (pwd.value != pwdchk.value) {
+        document.getElementById("sp_pwdchk").innerHTML = "불일치";
+        pwd.value = "";
+        pwdchk.value = "";
+        pwd.focus();
+      } else {
+        document.getElementById("sp_pwdchk").innerHTML = "일치";
+      }
+    }
+  </script>
+</html>

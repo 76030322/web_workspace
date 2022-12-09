@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="button" onclick="rmBlock()" value="rmBlock" />
+
+    <div id="remove">
+      <h3>안녕하세요</h3>
+      <input type="button" value="되돌리기" onclick="rmNone()" />
+    </div>
+  </body>
+
+  <style>
+    #remove {
+      display: none;
+    }
+    #remove.a {
+      display: block;
+      background-color: green;
+    }
+  </style>
+
+  <script>
+    function rmBlock() {
+      let remove = document.getElementById("remove");
+      remove.setAttribute("class", "a");
+    }
+
+    function rmNone() {
+      let remove = document.getElementById("remove");
+      remove.removeAttribute("class");
+    }
+  </script>
+</html>

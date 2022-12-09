@@ -1,0 +1,40 @@
+<script>
+  function myFocus() {
+    document.getElementById("pw").focus();
+    var txt = document.getElementById("txt");
+    document.getElementById("copy").value = txt.value;
+  }
+
+  function test() {
+    alert("test 호출");
+  }
+</script>
+
+<input type="text" id="txt" /><br />
+<input type="text" id="pw" onchange="test()" /><br />
+<input type="text" id="copy" /><br />
+<input type="button" value="focus" onclick="myFocus()" /><br />
+<hr />
+
+<script>
+  function test2() {
+    var result = confirm("정말로 삭제???");
+
+    if (result) {
+      alert("삭제");
+    } else {
+      alert("잘 생각했음!!!");
+    }
+  }
+</script>
+
+<button onclick="test2()">삭제</button>
+<hr />
+
+<script>
+  function test3() {
+    window.open("popup.html", "", "width=500, height=500");
+  }
+</script>
+
+<button onclick="test3()">팝업</button>

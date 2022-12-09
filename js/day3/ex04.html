@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color: aqua; width: 90px; height: 20px; padding: 40px">Click</div>
+    <hr />
+    <img id="myImage" onmousedown="mDown()" onmouseup="mUp()" src="../resources/images/light_off.jpg" width="150" height="180" />
+  </body>
+
+  <script>
+    function mDown(obj) {
+      //   alert(obj);
+      if (obj != undefined) {
+        obj.style.backgroundColor = "skyblue";
+        obj.innerHTML = "클릭";
+      } else {
+        document.getElementById("myImage").src = "../resources/images/light_on.jpg";
+      }
+    }
+    function mUp(obj) {
+      if (obj != undefined) {
+        obj.style.backgroundColor = "red";
+        obj.innerHTML = "클릭 놨다";
+      } else {
+        document.getElementById("myImage").src = "../resources/images/light_off.jpg";
+      }
+    }
+  </script>
+</html>

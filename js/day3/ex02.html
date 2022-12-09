@@ -1,0 +1,21 @@
+<form id="fo" action="ex01.html" method="get">
+  <input type="text" placeholder="name" id="u_name" /><br />
+  <input type="text" placeholder="addr" id="u_addr" /><br />
+  <input type="submit" onclick="test()" value="sumbit" /><br />
+  <input type="button" onclick="test()" value="button" /><br />
+  <!-- 유효성 검사를 위해서는 type button을 사용하자-->
+</form>
+
+<input type="button" onclick="location.href='ex01.html'" value=" location.href 이동" /><br />
+<a href="ex01.html"> A태그 ex01이동</a><br />
+<input type="button" onclick="test2()" value=" 함수로 이동" />
+
+<script>
+  function test() {
+    alert("값 확인");
+    fo.submit();
+  }
+  function test2() {
+    location.href = "ex01.html";
+  }
+</script>
