@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  /*
+img.id = "aaa" // 특정 태그에 id 추가
+img.className = "ccc ddd" //특정 태그에 class 추가
+*/
+  var img;
+  function add() {
+    img = document.createElement("img");
+    img.src = "../resources/images/img.jpg";
+    img.width = 100;
+    img.style.height = "100px";
+    //img.setAttribute('src', 'html5.jpg');
+    //img.setAttribute('width', 100);
+    //img.setAttribute('height', 122);
+
+    document.getElementById("test").appendChild(img);
+  }
+  function remove() {
+    //msg ="<img src='../resources/images/...' width='100'"
+    //document.getElementById("test").innerHTML = msg
+    document.getElementById("test").removeChild(img);
+    //document.getElementById("test").remove(); //자기자신 삭제
+  }
+</script>
+<p id="test">test</p>
+<a href="#" onclick="add()">[이미지 추가]</a>
+<a href="#" onclick="remove()">[이미지 삭제]</a>

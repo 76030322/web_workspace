@@ -1,0 +1,57 @@
+<body onload="init()">
+  <script>
+    function init() {
+      //alert('초기화 됩니다')
+    }
+    function over(obj) {
+      console.log(obj);
+      obj.style.color = "red";
+    }
+    function out() {
+      obj = document.getElementById("h");
+      obj.style.color = "black";
+    }
+  </script>
+  <h1 id="h" onmouseover="over(this)" onmouseout="out()">마우스를 올리세요</h1>
+
+  <h1 onmouseover="style.color='red', style.backgroundColor='black'" onmouseout="style.color='black', style.backgroundColor='white'">마우스를 올리세요</h1>
+
+  <div id="clock"></div>
+  <button type="button" onclick="digClock()">시작</button>
+  <button type="button" onclick="end()">끝</button>
+  <script>
+    var e;
+    function digClock() {
+      today = new Date();
+      time = today.getMonth() + 1 + "월";
+      time += today.getDate() + "일";
+      time += today.getHours() + "시";
+      time += today.getMinutes() + "분";
+      time += today.getSeconds() + "초";
+
+      document.getElementById("clock").innerHTML = time;
+      e = setTimeout("digClock()", 1000);
+    }
+    function end() {
+      clearTimeout(e);
+    }
+  </script>
+
+  <hr />
+  <div id="clock2"></div>
+  <button type="button" onclick="digClock2()">시작</button>
+  <button type="button" onclick="end2()">끝</button>
+  <script>
+    var e02;
+    function digClock2() {
+      e02 = setInterval(start, 1000);
+    }
+    function start() {
+      d = new Date();
+      document.getElementById("clock2").innerHTML = d.toLocaleTimeString();
+    }
+    function end2() {
+      clearInterval(e02);
+    }
+  </script>
+</body>

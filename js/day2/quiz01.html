@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>겔러리</title>
+  </head>
+  <body>
+    <script>
+      var userInfo = [
+        { id: "aaa", name: "홍길동", age: 20 },
+        { id: "bbb", name: "김개똥", age: 30 },
+        { id: "ccc", name: "고길동", age: 40 },
+      ];
+      function allUser() {
+        var u_id = document.getElementById("u_id").value;
+        console.log("getUser u_id : ", u_id);
+
+        var table = "";
+        table += '<table border="1">';
+        table += "<tr><th>아이디</th> <th>이름</th> <th>나이</th></tr>";
+
+        cnt = 0;
+
+        for (i = 0; i < userInfo.length; i++) {
+          cnt = cnt + 1;
+
+          table += "<tr>";
+          table += "<td>" + userInfo[i]["id"] + "</td> <td>" + userInfo[i]["name"] + "</td> <td>" + userInfo[i]["age"] + "</td>";
+          table += "</tr>";
+        }
+        console.log("allUser : ", cnt);
+        console.log("userInfo.length : ", userInfo.length);
+        table += "</table>";
+        document.getElementById("table").innerHTML = table;
+      }
+      function getUser() {
+        var u_id = document.getElementById("u_id").value;
+        console.log("getUser u_id : ", u_id);
+        var table = "";
+        table += '<table border="1">';
+        table += "<tr><th>아이디</th> <th>이름</th> <th>나이</th></tr>";
+
+        cnt = 0;
+        for (i = 0; i < userInfo.length; i++) {
+          if (userInfo[i]["id"] == u_id) {
+            table += "<tr>";
+            table += "<td>" + userInfo[i]["id"] + "</td> <td>" + userInfo[i]["name"] + "</td> <td>" + userInfo[i]["age"] + "</td>";
+            table += "</tr>";
+            break;
+          }
+          cnt = cnt + 1;
+        }
+
+        console.log("getUser : ", cnt);
+        table += "</table>";
+        document.getElementById("table").innerHTML = table;
+      }
+      function test() {
+        var u_id = document.getElementById("u_id").value;
+        var table = "";
+        table += '<table border="1">';
+        table += "<tr><th>아이디</th> <th>이름</th> <th>나이</th></tr>";
+
+        cnt = 0;
+        for (i = 0; i < userInfo.length; i++) {
+          if (userInfo[i]["id"] == u_id) {
+            break;
+          }
+          cnt = cnt + 1;
+        }
+        if (cnt == userInfo.length) {
+          for (i = 0; i < userInfo.length; i++) {
+            table += "<tr>";
+            table += "<td>" + userInfo[i]["id"] + "</td> <td>" + userInfo[i]["name"] + "</td> <td>" + userInfo[i]["age"] + "</td>";
+            table += "</tr>";
+          }
+        } else {
+          table += "<tr>";
+          table += "<td>" + userInfo[cnt]["id"] + "</td> <td>" + userInfo[cnt]["name"] + "</td> <td>" + userInfo[cnt]["age"] + "</td>";
+          table += "</tr>";
+        }
+
+        table += "</table>";
+        document.getElementById("table").innerHTML = table;
+      }
+    </script>
+    <div id="table">목록을 보여 줍니다</div>
+    <hr />
+    <button type="button" onclick="test()">모든 회원 보기</button>
+    <hr />
+    <input type="text" id="u_id" placeholder="input id" /><br />
+    <button type="button" onclick="test()">특정 회원 조회</button>
+  </body>
+</html>

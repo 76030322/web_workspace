@@ -1,0 +1,66 @@
+<script>
+  var city = ["서울", "부산", "인천"];
+
+  function printArr() {
+    for (i = 0; i < city.length; i++) {
+      document.write(city[i]);
+    }
+  }
+
+  printArr();
+
+  city[0] = "대구";
+  city[3] = "강원도";
+
+  document.write("<hr>" + typeof city + "<hr>");
+
+  var join01 = city.join();
+  var join02 = city.join("-");
+  var join03 = city.join("그리고");
+
+  document.write(typeof join01 + "<hr>");
+  document.write(join02 + "<hr>");
+  document.write(join03 + "<hr>");
+
+  city.push("aaa", "bbb");
+  document.write(city + "<hr>");
+
+  city.pop();
+  document.write(city + "<hr>");
+
+  city.unshift("aaa", "bbb");
+  document.write(city + "<hr>");
+
+  city.shift();
+  document.write(city + "<hr>");
+
+  var city = ["서울", "부산", "인천"];
+
+  function test01(d, i) {
+    document.write(d + "," + i + "<br>");
+  }
+
+  city.forEach(test01);
+
+  var dic = { d01: 111, d02: "aaa" };
+
+  dic.key = 1234;
+  dic["key02"] = 5555;
+
+  console.log(dic);
+
+  document.write("<hr>" + dic + "<hr>");
+  document.write("<hr>" + dic.d01 + "<hr>");
+  document.write("<hr>" + dic["d02"] + "<hr>");
+
+  function test02() {
+    document.getElementById("abc").innerHTML = "그래";
+  }
+
+  function test03() {
+    document.getElementById("abc").innerHTML = "응~";
+  }
+</script>
+<div id="abc">안녕하세요</div>
+<button type="button" onclick="test02()">test02</button>
+<button type="button" onclick="test03()">test03</button>
