@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../resources/js/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  </head>
+
+  <body>
+    <p>이벤트 처리</p>
+    <button class="hide">메세지 삭제</button>
+    <button class="show">메세지 보기</button>
+    <button class="show" onclick="test()">메세지 보기2</button>
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $(".hide").click(function () {
+        $("p").hide();
+      });
+      $(".show").click(function () {
+        $("p").show();
+      });
+    });
+    function test() {
+      $("p").html("<b>안녕</b>");
+    }
+  </script>
+</html>

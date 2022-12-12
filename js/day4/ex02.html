@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../resources/js/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="out">
+      <p class="a">마우스 이벤트</p>
+      <p id="b">0</p>
+    </div>
+  </body>
+  <style>
+    .out {
+      width: 200px;
+      height: 100px;
+      border: 1px solid black;
+      text-align: center;
+      background-color: yellow;
+    }
+  </style>
+  <script>
+    var n = 0;
+    $().ready(function () {
+      $("div.out").mouseenter(function () {
+        $(".a").html("<b>마우스 포인트 들어옴</b>");
+        $("#b").text(++n);
+      });
+      $("div.out").mouseleave(function () {
+        $(".a").text("<b>마우스 포인트 나감</b>");
+        $("#b").text("최종 횟수 : " + n);
+      });
+    });
+  </script>
+</html>

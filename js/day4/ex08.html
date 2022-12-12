@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <script src="../resources/js/jquery-3.6.1.min.js"></script>
+        <script src="../resources/js/jquery-1.13.2-ui.js"></script>
+    </head>
+
+    <body>
+        <div id="d">드래그</div>
+    </body>
+
+    <script>
+        $(function () {
+            $("#d").draggable();
+        });
+    </script>
+
+    <style>
+        #d {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            border-style: solid;
+        }
+    </style>
+</html>

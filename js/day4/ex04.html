@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../resources/js/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  </head>
+
+  <body>
+    <div>css 설정</div>
+    <button onclick="add_css()">css 적용</button>
+    <button onclick="rm_css()">css 해제</button>
+    <hr />
+    <p>김길이</p>
+    <button onclick="test()">클릭</button>
+  </body>
+
+  <script>
+    function add_css() {
+      $("div").addClass("css");
+    }
+
+    function rm_css() {
+      $("div").removeClass("css");
+    }
+
+    function test() {
+      $("p").css({ "background-color": "yellow" });
+    }
+  </script>
+
+  <style>
+    .css {
+      color: blue;
+      font-size: xx-large;
+    }
+  </style>
+</html>

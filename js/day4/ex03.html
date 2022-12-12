@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../resources/js/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  </head>
+
+  <body>
+    <div align="center">
+      <img id="img" src="../resources/images/p1.png" width="100px" height="100px" />
+    </div>
+  </body>
+
+  <script>
+    var cnt = 1;
+    var myVar;
+    $(function () {
+      $("img").mousedown(function () {
+        myVar = setInterval(imgFunc, 200);
+        console.log("cnt: " + cnt);
+      });
+      $("img").mouseup(function () {
+        clearInterval(myVar);
+      });
+    });
+    function imgFunc() {
+      if (cnt == 10) cnt = 1;
+      document.getElementById("img").setAttribute("src", "");
+      $("#img").attr("src", "../resources/images/p" + cnt + ".png");
+      cnt++;
+    }
+  </script>
+</html>
